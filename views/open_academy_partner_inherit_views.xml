@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="res_partner_open_academy_inherit_search" model="ir.ui.view">
+        <field name="name">res.partner.open.academy.inherit.search</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="before">
+                <filter string="Instructor" name="type_instructor" domain="[('instructor', '=', True)]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_partner_open_academy_inherit" model="ir.ui.view">
+        <field name="name">res.partner.open.academy.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="instructor"/>
+            </xpath>
+
+
+        </field>
+    </record>
+
+    <record id="res_partner_open_academy_inherit_action" model="ir.actions.act_window">
+        <field name="name">Instructor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_type_instructor': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new Instructor
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="res_partner_open_academy_inherit_menu" name="Instructor" parent="open_academy_root"
+              action="res_partner_open_academy_inherit_action" sequence="8"/>
+
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record model="ir.module.category" id="open_academy.module_open_academy">
+            <field name="name">Open Academy</field>
+            <field name="description">Manage Academy</field>
+<!--            <field name="sequence">10</field>-->
+        </record>
+
+        <record id="open_academy.open_academy_user_session_group" model="res.groups">
+            <field name="name">User Course Session</field>
+            <field name="category_id" ref="open_academy.module_open_academy"/>
+        </record>
+
+        <record id="open_academy.open_academy_manager_session_group" model="res.groups">
+            <field name="name">Session Manager</field>
+            <field name="category_id" ref="open_academy.module_open_academy"/>
+        </record>
+    </data>
+</odoo>

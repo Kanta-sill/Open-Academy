@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="open_academy_responsible_read_create_course_rule" model="ir.rule">
+            <field name="name">Manager Course Responsible</field>
+            <field name="model_id" ref="model_open_academy_course"/>
+            <field name="domain_force">[('manager_state','=',True)]</field>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="groups" eval="[4, ref('open_academy.open_academy_manager_session_group')]"/>
+        </record>
+    </data>
+</odoo>

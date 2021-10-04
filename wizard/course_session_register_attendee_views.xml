@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="course_session_register_attendee_view_form" model="ir.ui.view">
+        <field name="name">course.session.register.attendee.view.form</field>
+        <field name="model">course.session.register.attendee</field>
+        <field name="arch" type="xml">
+            <form string="Register Attendee">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+
+                    </group>
+                    <footer>
+                        <button name="register_attendee" string="Register" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="course_session_register_attendee_action" model="ir.actions.act_window">
+        <field name="name">Register Attendees</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">course.session.register.attendee</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

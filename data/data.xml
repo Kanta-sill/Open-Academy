@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="open_academy_course_data" model="open.academy.course">
+        <field name="title">Summer_2021_Graphic</field>
+        <field name="description">New Course of Summer</field>
+    </record>
+
+</odoo>

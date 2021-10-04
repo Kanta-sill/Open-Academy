@@ -1,0 +1,1 @@
+from . import course_session_register_attendee
